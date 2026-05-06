@@ -1,9 +1,19 @@
 # temaActivitateRestaurant
+Review#1 pentru Voicu Andrei Razvan
+Am construit acest proiect ca o simulare practică pentru administrarea unui restaurant, punând accent pe modul în care datele circulă între angajați, meniu și clienți. Totul este gândit să funcționeze interactiv, astfel încât oricine rulează programul să poată gestiona fluxul unei zile de muncă direct din consolă, fără să aibă nevoie de cunoștințe tehnice avansate.
 
-Am creat 3 clase pentru a simula nevoile activitatii unui restaurant. Fiecare restaurant are angajati, in cazul nostru avem ospatari si bucatari, in schimburi diferite, de la 1 la 3. Fiecare angajat poate sa acumuleze vechime, la o vechime de 5 ani este promovat, primeste un bonus la salariu si isi poate alege schimbul.La o vechime de 10 ani se poate pensiona.
+În centrul aplicației se află echipa restaurantului, formată din ospătari și bucătari care lucrează în schimburi diferite. Programul permite organizarea acestora și afișarea detaliilor lor specifice prin concepte de POO, asigurându-se că fiecare membru al staff-ului este la locul potrivit în tura potrivită.
 
-Avem o clasa Meniu unde se pot adauga produsele servite de restaurant ca obiecte cu proprietati precum nume, pret, disponibilitate, produs care contine alergeni sau produs vegan.
+Meniul este și el o piesă esențială, fiind împărțit inteligent între preparate clasice și opțiuni vegane. Fiecare produs vine la pachet cu detalii despre preț, disponibilitate și alergeni, oferind posibilitatea de a modifica aceste date în timp real. Astfel, dacă un produs nu mai este disponibil sau prețul lui se schimbă, actualizarea se face instantaneu prin meniul interactiv al aplicației.
 
-Clasa Rezervari aranjeaza mesele disponibile in restaurant ca o matrice de 6x6 pentru clientii care vor sa isi rezerve un loc.
+Logistica meselor este gestionată printr-o matrice de 6x6 care reprezintă planul fizic al restaurantului. Acest sistem de rezervări permite ocuparea celor 36 de locuri într-un mod organizat,ajutând la distribuirea clienților către ospătari. Este o soluție simplă și vizuală pentru a vedea exact care zone din restaurant sunt pline și care sunt încă libere pentru noi oaspeți.
 
-Avem ca scop sa cream obiecte pentru angajati,meniu(preparatele care se servesc la restaurant) si pentru rezervari(clienti). Vrem sa putem sa le construim, sa le afisam si sa prelucram datele inauntrul acestor clase.
+La pornire, aplicația își ia singură informațiile despre angajați, meniu și rezervări din fiserele CSV, eliminând nevoia de a introduce totul manual de fiecare dată.
+
+Arhitectura acestui proiect se bazează pe pilonii fundamentali ai programării moderne, începând cu încapsularea și abstractizarea. Am protejat datele sensibile ale claselor, precum detaliile salariale sau prețurile, folosind membri privați și oferind acces la aceștia doar prin metode de tip get și set. În acest fel, logica internă a obiectelor rămâne ascunsă de utilizatorul final, care interacționează doar cu interfața simplificată a meniului din consolă.
+
+Un rol central în aplicație îl joacă moștenirea, care mi-a permis să creez ierarhii naturale între obiecte. De exemplu, clasa de bază Meniu dictează structura generală pentru toate produsele, în timp ce varianta derivată pentru preparatele vegane adaugă câmpuri specifice, cum ar fi sursa de proteină. Această organizare deschide calea către polimorfism, pe care l-am folosit pentru a procesa liste întregi de obiecte diferite printr-o singură comandă. Astfel, deși programul lucrează cu un vector de pointeri către clasa părinte, el apelează automat funcția corectă de afișare pentru fiecare tip de produs în parte, datorită metodelor virtuale.
+
+Pentru a asigura stabilitatea programului, am implementat o gestionare a resurselor folosind Smart Pointers. Prin utilizarea shared_ptr, am eliminat riscul scurgerilor de memorie, deoarece obiectele se dezalocă automat atunci când nu mai sunt necesare. De asemenea, am respectat regulile stricte de design ale claselor, definind constructori de copiere și operatori de atribuire pentru a gestiona corect șirurile de caractere alocate dinamic, prevenind astfel crash-urile cauzate de copierea greșită a obiectelor.
+
+Robustețea sistemului este completată de gestiunea excepțiilor și de utilizarea eficientă a bibliotecii standard (STL). Am integrat blocuri try-catch pentru a preveni închiderea forțată a programului în cazul unor erori, cum ar fi încercarea de a rezerva o masă care apare deja ocupată în matricea restaurantului. Totul este legat de elemente de tip static, care îmi permit să urmăresc statistici globale la nivelul întregului restaurant, oferind o imagine clară asupra întregului sistem de gestiune dintr-o perspectivă de ansamblu.
