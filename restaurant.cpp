@@ -45,7 +45,6 @@ void Restaurant::incepeZiuaDeMunca() const {
     cout << "-----------------------------\n";
 }
 
-// Aici facem DOWNCAST cu sens (dynamic_pointer_cast)
 void Restaurant::primesteRezervare(Rezervari& rezervare) {
     cout << "\n[Sistem] Cerere rezervare: " << rezervare.getNumeClient() << "\n";
 
