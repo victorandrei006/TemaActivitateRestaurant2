@@ -57,7 +57,7 @@ void Restaurant::primesteRezervare(Rezervari& rezervare) {
     bool alocata = false;
     for (auto& angajat : echipa) {
         shared_ptr<Ospatar> ospatar = dynamic_pointer_cast<Ospatar>(angajat);
-        if (ospatar) { 
+        if (ospatar && ospatar->getNumarRezervari()<3) { 
             ospatar->preiaRezervare(rezervare);
             alocata = true;
             break;

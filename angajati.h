@@ -52,6 +52,7 @@ public:
     void executaSarcina() const override;
     Angajat* clone() const override;
     void preiaRezervare(const Rezervari& r);
+    int getNumarRezervari()const;
 protected:
     void afisareVirtuala(std::ostream& os) const override;
 };

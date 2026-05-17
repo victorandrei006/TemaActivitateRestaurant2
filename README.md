@@ -2,7 +2,7 @@
 Review#1 pentru Voicu Andrei Razvan
 Am construit acest proiect ca o simulare practică pentru administrarea unui restaurant, punând accent pe modul în care datele circulă între angajați, meniu și clienți. Totul este gândit să funcționeze interactiv, astfel încât oricine rulează programul să poată gestiona fluxul unei zile de muncă direct din consolă, fără să aibă nevoie de cunoștințe tehnice avansate.
 
-În centrul aplicației se află echipa restaurantului, formată din ospătari și bucătari care lucrează în schimburi diferite. Programul permite organizarea acestora și afișarea detaliilor lor specifice prin concepte de POO, asigurându-se că fiecare membru al staff-ului este la locul potrivit în tura potrivită.
+În centrul aplicației se află echipa restaurantului, formată din ospătari și bucătari. Programul permite organizarea acestora și afișarea detaliilor lor specifice prin concepte de POO, asigurându-se că fiecare membru al staff-ului este la locul potrivit în tura potrivită.
 
 Meniul este și el o piesă esențială, fiind împărțit inteligent între preparate clasice și opțiuni vegane. Fiecare produs vine la pachet cu detalii despre preț, disponibilitate și alergeni, oferind posibilitatea de a modifica aceste date în timp real. Astfel, dacă un produs nu mai este disponibil sau prețul lui se schimbă, actualizarea se face instantaneu prin meniul interactiv al aplicației.
 

@@ -118,6 +118,8 @@ void Ospatar::preiaRezervare(const Rezervari& r) {
     cout << "Ospatarul " << (getNume() ? getNume() : "") << " a preluat rezervarea pentru " << r.getNumeClient() << ".\n";
 }
 
+int Ospatar::getNumarRezervari()const {return rezervariPreluate.size();}
+
 void Ospatar::afisareVirtuala(ostream& os) const {
     os << "[Ospatar] ";
     Angajat::afisareVirtuala(os); 
